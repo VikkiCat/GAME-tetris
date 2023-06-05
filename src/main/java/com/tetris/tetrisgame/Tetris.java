@@ -1,7 +1,7 @@
 package com.tetris.tetrisgame;
 
 
-import java.text.Normalizer;
+//import java.text.Normalizer;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -63,7 +63,7 @@ public class Tetris extends Application {
         Form a = nextObj;
         groupe.getChildren().addAll(a.a, a.b, a.c, a.d);
         moveOnKeyPress(a);
-        Object a;
+        object = a;
         nextObj = Controller.makeRect();
         stage.setScene(scene);
         stage.setTitle("TETRIS");
@@ -133,12 +133,451 @@ public class Tetris extends Application {
                  }
             }
         });
+    }
+
+    private void MoveTurn(Form form){
+        int f = form.form;
+        Rectangle a = form.a;
+        Rectangle b = form.b;
+        Rectangle c = form.c;
+        Rectangle d = form.d;
+
+        switch (form.getName()){
+            case "j":
+                if (f == 1 && cB(a, 1, -1) && cB(c, -1, -1) && cB(d, -2, -2)){
+                    MoveRight(form.a);
+                    MoveDown(form.a);
+                    MoveDown(form.c);
+                    MoveLeft(form.c);
+                    MoveDown(form.d);
+                    MoveDown(form.d);
+                    MoveLeft(form.d);
+                    MoveLeft(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 2 && cB(a, 1, -1) && cB(c, -1, -1) && cB(d, -2, -2)){
+                    MoveRight(form.a);
+                    MoveDown(form.a);
+                    MoveDown(form.c);
+                    MoveLeft(form.c);
+                    MoveDown(form.d);
+                    MoveDown(form.d);
+                    MoveLeft(form.d);
+                    MoveLeft(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 3 && cB(a, 1, -1) && cB(c, -1, -1) && cB(d, -2, -2)){
+                    MoveRight(form.a);
+                    MoveDown(form.a);
+                    MoveDown(form.c);
+                    MoveLeft(form.c);
+                    MoveDown(form.d);
+                    MoveDown(form.d);
+                    MoveLeft(form.d);
+                    MoveLeft(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 4 && cB(a, 1, 1) && cB(c, 1, -1) && cB(d, 2, -2)) {
+                    MoveUp(form.a);
+                    MoveRight(form.a);
+                    MoveRight(form.c);
+                    MoveDown(form.c);
+                    MoveRight(form.d);
+                    MoveRight(form.d);
+                    MoveDown(form.d);
+                    MoveDown(form.d);
+                    form.changeForm();
+                    break;
+                }
+                break;
+            case "l":
+                if (f == 1 && cB(a, 1, -1) && cB(c, 1, 1) && cB(b, 2, 2)) {
+                    MoveRight(form.a);
+                    MoveDown(form.a);
+                    MoveUp(form.c);
+                    MoveRight(form.c);
+                    MoveUp(form.b);
+                    MoveUp(form.b);
+                    MoveRight(form.b);
+                    MoveRight(form.b);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 2 && cB(a, -1, -1) && cB(b, 2, -2) && cB(c, 1, -1)) {
+                    MoveDown(form.a);
+                    MoveLeft(form.a);
+                    MoveRight(form.b);
+                    MoveRight(form.b);
+                    MoveDown(form.b);
+                    MoveDown(form.b);
+                    MoveRight(form.c);
+                    MoveDown(form.c);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 3 && cB(a, -1, 1) && cB(c, -1, -1) && cB(b, -2, -2)) {
+                    MoveLeft(form.a);
+                    MoveUp(form.a);
+                    MoveDown(form.c);
+                    MoveLeft(form.c);
+                    MoveDown(form.b);
+                    MoveDown(form.b);
+                    MoveLeft(form.b);
+                    MoveLeft(form.b);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 4 && cB(a, 1, 1) && cB(b, -2, 2) && cB(c, -1, 1)) {
+                    MoveUp(form.a);
+                    MoveRight(form.a);
+                    MoveLeft(form.b);
+                    MoveLeft(form.b);
+                    MoveUp(form.b);
+                    MoveUp(form.b);
+                    MoveLeft(form.c);
+                    MoveUp(form.c);
+                    form.changeForm();
+                    break;
+                }
+                break;
+            case "o":
+                break;
+            case "s":
+                if (f == 1 && cB(a, -1, -1) && cB(c, -1, 1) && cB(d, 0, 2)) {
+                    MoveDown(form.a);
+                    MoveLeft(form.a);
+                    MoveLeft(form.c);
+                    MoveUp(form.c);
+                    MoveUp(form.d);
+                    MoveUp(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 2 && cB(a, 1, 1) && cB(c, 1, -1) && cB(d, 0, -2)) {
+                    MoveUp(form.a);
+                    MoveRight(form.a);
+                    MoveRight(form.c);
+                    MoveDown(form.c);
+                    MoveDown(form.d);
+                    MoveDown(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 3 && cB(a, -1, -1) && cB(c, -1, 1) && cB(d, 0, 2)) {
+                    MoveDown(form.a);
+                    MoveLeft(form.a);
+                    MoveLeft(form.c);
+                    MoveUp(form.c);
+                    MoveUp(form.d);
+                    MoveUp(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 4 && cB(a, 1, 1) && cB(c, 1, -1) && cB(d, 0, -2)) {
+                    MoveUp(form.a);
+                    MoveRight(form.a);
+                    MoveRight(form.c);
+                    MoveDown(form.c);
+                    MoveDown(form.d);
+                    MoveDown(form.d);
+                    form.changeForm();
+                    break;
+                }
+                break;
+            case "t":
+                if (f == 1 && cB(a, 1, 1) && cB(d, -1, -1) && cB(c, -1, 1)) {
+                    MoveUp(form.a);
+                    MoveRight(form.a);
+                    MoveDown(form.d);
+                    MoveLeft(form.d);
+                    MoveLeft(form.c);
+                    MoveUp(form.c);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 2 && cB(a, 1, -1) && cB(d, -1, 1) && cB(c, 1, 1)) {
+                    MoveRight(form.a);
+                    MoveDown(form.a);
+                    MoveLeft(form.d);
+                    MoveUp(form.d);
+                    MoveUp(form.c);
+                    MoveRight(form.c);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 3 && cB(a, -1, -1) && cB(d, 1, 1) && cB(c, 1, -1)) {
+                    MoveDown(form.a);
+                    MoveLeft(form.a);
+                    MoveUp(form.d);
+                    MoveRight(form.d);
+                    MoveRight(form.c);
+                    MoveDown(form.c);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 4 && cB(a, -1, 1) && cB(d, 1, -1) && cB(c, -1, -1)) {
+                    MoveLeft(form.a);
+                    MoveUp(form.a);
+                    MoveRight(form.d);
+                    MoveDown(form.d);
+                    MoveDown(form.c);
+                    MoveLeft(form.c);
+                    form.changeForm();
+                    break;
+                }
+                break;
+            case "z":
+                if (f == 1 && cB(b, 1, 1) && cB(c, -1, 1) && cB(d, -2, 0)) {
+                    MoveUp(form.b);
+                    MoveRight(form.b);
+                    MoveLeft(form.c);
+                    MoveUp(form.c);
+                    MoveLeft(form.d);
+                    MoveLeft(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 2 && cB(b, -1, -1) && cB(c, 1, -1) && cB(d, 2, 0)) {
+                    MoveDown(form.b);
+                    MoveLeft(form.b);
+                    MoveRight(form.c);
+                    MoveDown(form.c);
+                    MoveRight(form.d);
+                    MoveRight(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 3 && cB(b, 1, 1) && cB(c, -1, 1) && cB(d, -2, 0)) {
+                    MoveUp(form.b);
+                    MoveRight(form.b);
+                    MoveLeft(form.c);
+                    MoveUp(form.c);
+                    MoveLeft(form.d);
+                    MoveLeft(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 4 && cB(b, -1, -1) && cB(c, 1, -1) && cB(d, 2, 0)) {
+                    MoveDown(form.b);
+                    MoveLeft(form.b);
+                    MoveRight(form.c);
+                    MoveDown(form.c);
+                    MoveRight(form.d);
+                    MoveRight(form.d);
+                    form.changeForm();
+                    break;
+                }
+                break;
+            case "i":
+                if (f == 1 && cB(a, 2, 2) && cB(b, 1, 1) && cB(d, -1, -1)) {
+                    MoveUp(form.a);
+                    MoveUp(form.a);
+                    MoveRight(form.a);
+                    MoveRight(form.a);
+                    MoveUp(form.b);
+                    MoveRight(form.b);
+                    MoveDown(form.d);
+                    MoveLeft(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 2 && cB(a, -2, -2) && cB(b, -1, -1) && cB(d, 1, 1)) {
+                    MoveDown(form.a);
+                    MoveDown(form.a);
+                    MoveLeft(form.a);
+                    MoveLeft(form.a);
+                    MoveDown(form.b);
+                    MoveLeft(form.b);
+                    MoveUp(form.d);
+                    MoveRight(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 3 && cB(a, 2, 2) && cB(b, 1, 1) && cB(d, -1, -1)) {
+                    MoveUp(form.a);
+                    MoveUp(form.a);
+                    MoveRight(form.a);
+                    MoveRight(form.a);
+                    MoveUp(form.b);
+                    MoveRight(form.b);
+                    MoveDown(form.d);
+                    MoveLeft(form.d);
+                    form.changeForm();
+                    break;
+                }
+                if (f == 4 && cB(a, -2, -2) && cB(b, -1, -1) && cB(d, 1, 1)) {
+                    MoveDown(form.a);
+                    MoveDown(form.a);
+                    MoveLeft(form.a);
+                    MoveLeft(form.a);
+                    MoveDown(form.b);
+                    MoveLeft(form.b);
+                    MoveUp(form.d);
+                    MoveRight(form.d);
+                    form.changeForm();
+                    break;
+                }
+                break;
+        }
+
+    }
+
+    private void RemoveRows(Pane pane){
+        ArrayList<Node> rects = new ArrayList<Node>();
+        ArrayList<Integer> lines = new ArrayList<Integer>();
+        ArrayList<Node> newrects = new ArrayList<Node>();
+        int full = 0;
+        //check which line is full
+        for (int i = 0; i < MESH[0].length; i++) {
+            for (int j = 0; j < MESH.length; j++) {
+                if (MESH[i][j] == 1)
+                    full++;
+            }
+
+            if (full == MESH.length)
+                lines.add(i+lines.size());
+            full = 0;
+        }
+
+        //Deleting the row
+        if (lines.size() > 0)
+            do {
+                for (Node node:
+                     pane.getChildren()) {
+                    if (node instanceof Rectangle)
+                        rects.add(node);
+                }
+                score += 50;
+                linesN++;
+
+                //Deleting block on row
+
+                for (Node node:
+                     rects) {
+                    Rectangle a = (Rectangle) node;
+                    if (a.getY() == lines.get(0)*SIZE){
+                        MESH[(int) a.getX()/SIZE][(int) a.getY()/SIZE] = 0;
+                        pane.getChildren().remove(node);
+                    } else newrects.add(node);
+                }
+                for (Node node:
+                     newrects) {
+                    Rectangle a = (Rectangle) node;
+                    if (a.getY() < lines.get(0)*SIZE){
+                        MESH[(int) a.getX()/SIZE][(int) a.getY()/SIZE] = 0;
+                        a.setY(a.getY() + SIZE);
+                    }
+                    lines.remove(0);
+                    rects.clear();
+                    newrects.clear();
+
+                    for (Node node1:
+                         pane.getChildren()) {
+                        if (node1 instanceof Rectangle)
+                            rects.add(node1);
+                    }
+
+                    for (Node node2 :
+                            rects) {
+                        Rectangle a1 = (Rectangle) node2;
+                        try {
+                            MESH[(int) a1.getX()/SIZE][(int) a1.getY()/SIZE] = 1;
+                        } catch (ArrayIndexOutOfBoundsException e){ }
+                    }
+                    rects.clear();
+                }
+            } while (lines.size() > 0);
+    }
+
+    private void MoveDown(Rectangle rect){
+        if (rect.getY() + MOVE < YMAX)
+            rect.setY(rect.getY() + MOVE);
+    }
+
+    private void MoveRight(Rectangle rect){
+        if (rect.getX() + MOVE < XMAX - SIZE)
+            rect.setX(rect.getX() + MOVE);
+    }
+
+    private void MoveLeft(Rectangle rect){
+        if (rect.getX() - MOVE >= 0)
+            rect.setX(rect.getY() - MOVE);
+    }
+
+    private void MoveUp(Rectangle rect){
+        if (rect.getY() - MOVE > 0)
+            rect.setY(rect.getY() - MOVE);
+    }
+
+    public void MoveDown(Form form){
+        //moving is down is full
+        if (form.a.getY() == YMAX - SIZE || form.b.getY() == YMAX - SIZE ||
+                form.c.getY() ==YMAX - SIZE || form.d.getY() == YMAX - SIZE ||
+                moveA(form) || moveB(form) || moveC(form) || moveD(form)){
+            MESH[(int) form.a.getX()/SIZE][(int) form.a.getY()/SIZE] = 1;
+            MESH[(int) form.b.getX()/SIZE][(int) form.b.getY()/SIZE] = 1;
+            MESH[(int) form.c.getX()/SIZE][(int) form.c.getY()/SIZE] = 1;
+            MESH[(int) form.d.getX()/SIZE][(int) form.d.getY()/SIZE] = 1;
+
+            RemoveRows(groupe);
+
+            //creating a new block and adding to the scene
+
+            Form a = nextObj;
+            nextObj = Controller.makeRect();
+            object = a;
+            groupe.getChildren().addAll(a.a, a.b, a.c, a.d);
+            moveOnKeyPress(a);
+        }
+
+        //Moving one block down if down is not full
+        if (form.a.getY() + MOVE < YMAX && form.b.getY() + MOVE < YMAX &&
+            form.c.getY() + MOVE < YMAX && form.d.getY() + MOVE < YMAX){
+            //TODO 17:38
+            int movea = MESH[(int) form.a.getX()/SIZE][((int) form.a.getY()/SIZE) + 1];
+            int moveb = MESH[(int) form.a.getX()/SIZE][((int) form.a.getY()/SIZE) + 1];
+            int movec = MESH[(int) form.a.getX()/SIZE][((int) form.a.getY()/SIZE) + 1];
+            int moved = MESH[(int) form.a.getX()/SIZE][((int) form.a.getY()/SIZE) + 1];
+
+            if (movea == 0 && movea == moveb && moveb == movec && movec == moved){
+                form.a.setY(form.a.getY() + MOVE);
+                form.b.setY(form.b.getY() + MOVE);
+                form.c.setY(form.c.getY() + MOVE);
+                form.d.setY(form.d.getY() + MOVE);
+            }
+        }
+    }
+
+    private boolean moveA(Form form){
+        return (MESH[(int) form.a.getY()/SIZE][(int) form.a.getY()/SIZE + 1] == 1);
+    }
+
+    private boolean moveB(Form form){
+        return (MESH[(int) form.b.getY()/SIZE][(int) form.b.getY()/SIZE + 1] == 1);
+    }
+
+    private boolean moveC(Form form){
+        return (MESH[(int) form.c.getY()/SIZE][(int) form.c.getY()/SIZE + 1] == 1);
+    }
+
+    private boolean moveD(Form form){
+        return (MESH[(int) form.d.getY()/SIZE][(int) form.d.getY()/SIZE + 1] == 1);
+    }
 
 
+    private boolean cB(Rectangle rectangle, int x, int y){
+        boolean yb = false;
+        boolean xb = false;
 
+        if (x >= 0) xb = rectangle.getX() + x*MOVE <= XMAX - SIZE;
+        if (x < 0) xb = rectangle.getX() + x*MOVE >= 0;
+        if (y >= 0) xb = rectangle.getY() + y*MOVE > 0;
+        if (x < 0) xb = rectangle.getY() + y*MOVE < YMAX;
 
-
-
+        return xb&&yb&&MESH[((int) rectangle.getX()/SIZE)+x][((int) rectangle.getY()/SIZE)-y] == 0;
     }
 
 
