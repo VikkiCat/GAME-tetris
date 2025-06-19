@@ -1,7 +1,7 @@
 # Tetris Game (JavaFX)
 A simple implementation of the classic Tetris game using JavaFX. This project demonstrates core game mechanics like piece movement, rotation, line clearing, scoring, and game-over detection, all rendered using JavaFX components.
 
-##Features
+## Features
 ✅ Classic Tetris gameplay
 ✅ Supports standard Tetris shapes (I, J, L, O, S, T, Z)
 ✅ Smooth block movement and rotation
@@ -10,32 +10,32 @@ A simple implementation of the classic Tetris game using JavaFX. This project de
 ✅ Game over detection and exit
 ✅ Simple UI with real-time updates
 
-##Screenshots
+## Screenshots
 ![START-1](https://github.com/VikkiCat/GAME-tetris/assets/33381663/44afc73f-4ec0-4644-8a29-a79bd9f0487b)
 
-##Game Controls
+## Game Controls
 ↑ - Change rotation 
 ↓ - Down (faster down)
 → - Right
 ← - Left
 
-#How to Run
+# How to Run
 ##Requirements
 Java 8 or higher
 JavaFX SDK (if not bundled with your JDK)
 
-##Compile
+## Compile
 ```bash
 javac -d out src/com/tetris/tetrisgame/*.java
 ```
 
-##Run
+## Run
 ```bash
 java -cp out com.tetris.tetrisgame.Tetris
 ```
 Alternatively, you can run it directly from your IDE (IntelliJ IDEA, Eclipse, NetBeans).
 
-##Controls
+## Controls
 | Key       | Action                 |
 | --------- | ---------------------- |
 | **LEFT**  | Move piece left        |
@@ -43,7 +43,7 @@ Alternatively, you can run it directly from your IDE (IntelliJ IDEA, Eclipse, Ne
 | **DOWN**  | Move piece down faster |
 | **UP**    | Rotate the piece       |
 
-##Code Structure
+## Code Structure
 ```bash
 src/com/tetris/tetrisgame/
 ├── Tetris.java        // Main class handling game logic, rendering, input
@@ -66,7 +66,7 @@ Controller.java
 ```
 : Responsible for creating new tetrominoes and controlling their movement.
 
-##Game Logic Overview
+## Game Logic Overview
 Grid size: 12 × 24 blocks
 
 Block size: 25px
@@ -77,5 +77,5 @@ Line clear: Rows are checked and removed when full
 
 Game over: Triggered when new pieces collide at the top
 
-##License
+## License
 This project is provided as-is for educational purposes. Feel free to modify and enhance it!
