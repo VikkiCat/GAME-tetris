@@ -2,26 +2,26 @@
 A simple implementation of the classic Tetris game using JavaFX. This project demonstrates core game mechanics like piece movement, rotation, line clearing, scoring, and game-over detection, all rendered using JavaFX components.
 
 ## Features
-✅ Classic Tetris gameplay
-✅ Supports standard Tetris shapes (I, J, L, O, S, T, Z)
-✅ Smooth block movement and rotation
-✅ Score tracking (50 points per cleared line)
-✅ Line count display
-✅ Game over detection and exit
+✅ Classic Tetris gameplay\
+✅ Supports standard Tetris shapes (I, J, L, O, S, T, Z)\
+✅ Smooth block movement and rotation\
+✅ Score tracking (50 points per cleared line)\
+✅ Line count display\
+✅ Game over detection and exit\
 ✅ Simple UI with real-time updates
 
 ## Screenshots
 ![START-1](https://github.com/VikkiCat/GAME-tetris/assets/33381663/44afc73f-4ec0-4644-8a29-a79bd9f0487b)
 
 ## Game Controls
-↑ - Change rotation 
-↓ - Down (faster down)
-→ - Right
+↑ - Change rotation\
+↓ - Down (faster down)\
+→ - Right\
 ← - Left
 
 # How to Run
-##Requirements
-Java 8 or higher
+## Requirements
+Java 8 or higher\
 JavaFX SDK (if not bundled with your JDK)
 
 ## Compile
@@ -33,7 +33,7 @@ javac -d out src/com/tetris/tetrisgame/*.java
 ```bash
 java -cp out com.tetris.tetrisgame.Tetris
 ```
-Alternatively, you can run it directly from your IDE (IntelliJ IDEA, Eclipse, NetBeans).
+> Alternatively, you can run it directly from your IDE (IntelliJ IDEA, Eclipse, NetBeans).
 
 ## Controls
 | Key       | Action                 |
@@ -54,26 +54,26 @@ src/com/tetris/tetrisgame/
 ```bash
 Tetris.java
 ```
-: Contains the primary game loop, rendering logic, and event handling for key presses.
+Contains the primary game loop, rendering logic, and event handling for key presses.
 
 ```bash
 Form.java
 ```
-: Represents individual Tetris shapes, holds rectangles for each block of a shape.
+Represents individual Tetris shapes, holds rectangles for each block of a shape.
 
 ```bash
 Controller.java
 ```
-: Responsible for creating new tetrominoes and controlling their movement.
+Responsible for creating new tetrominoes and controlling their movement.
 
 ## Game Logic Overview
-Grid size: 12 × 24 blocks
+Grid size: 12 × 24 blocks\
 
-Block size: 25px
+Block size: 25px\
 
-Score: +50 points per cleared row
+Score: +50 points per cleared row\
 
-Line clear: Rows are checked and removed when full
+Line clear: Rows are checked and removed when full\
 
 Game over: Triggered when new pieces collide at the top
 
